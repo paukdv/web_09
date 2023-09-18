@@ -43,10 +43,10 @@ class SpiderPipline(object):
 
     def close_spider(self, spider):
         with open('quotes.json', 'w', encoding='utf-8') as fd:
-            json.dump(self.quotes, fd, ensure_ascii=False)
+            json.dump(self.quotes, fd, ensure_ascii=False, indent=4)
 
         with open('authors.json', 'w', encoding='utf-8') as fd:
-            json.dump(self.authors, fd, ensure_ascii=False)
+            json.dump(self.authors, fd, ensure_ascii=False, indent=4)
 
 
 class Spider(scrapy.Spider):
